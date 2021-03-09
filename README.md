@@ -1,4 +1,4 @@
 # Korean-Word-Scramble-Game
-This project used webslides.js
+webslides.js is used
 
 Demo: https://eungangku.pythonanywhere.com/
