@@ -1,4 +1,4 @@
 # Korean-Word-Scramble-Game
-webslides.js is used
+Flask and webslides.js are used
 
 Demo: https://eungangku.pythonanywhere.com/
