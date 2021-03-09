@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>한국어 단어 맞추기 게임 v1.1</title>
+    <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="{{ url_for('static', filename='css/webslides.css') }}">
+  <style>
+    #answer {
+      color:#b744dd
+    }
+  </style>
+  </head>
+  <body>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+
+      {% for answer in content_wrap_dic %}
+        <section>
+         <span class="background" style="background-image:url('static/images/bg1.webp')"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h1><strong>
+              {% for shuffled_characters in content_wrap_dic[answer] %}
+                {% for character in shuffled_characters %}
+                  {{character}}
+                {% endfor %}
+              {% endfor %}
+            </strong></h1>
+
+            <h1><strong id="answer"></strong></h1>
+
+            <p style="margin-top: 10px;">
+              <button href="" class="button zoomIn" onclick="document.getElementById('answer').innerText = '{{answer}}'">
+                정답보기
+              </button>
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+      {% endfor %}
+
+	
+    <section class="bg-black aligncenter">
+	<span class="background" style="background-image:url('static/images/bg.webp')"></span>
+    <!-- .wrap = container 1200px -->
+        <div class="wrap">
+          <h1>한국어 단어 맞추기 게임 v1.1</h1>  
+          <h4>github.com/eungangku</h4>
+        </div>
+    </section>
+		
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+    <!-- Required -->
+    <script src="{{ url_for('static', filename='js/webslides.js') }}"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="{{ url_for('static', filename='js/svg-icons.js') }}"></script>
+
+  </body>
+</html>

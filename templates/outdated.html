@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>한국어 단어 맞추기 게임 v1.0</title>
+        <head>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+        <style>
+            .character {
+                display: inline-block;
+                font-size: 7em;
+            }
+            .card {
+                margin-top: 100px;
+            }
+            #answercard {
+                background-color: rgb(174, 212, 236);
+            }
+            #profile {
+                margin-top: 100px;
+            }
+            #title {
+                padding: 50px;
+                font-family: 'Black Han Sans', sans-serif;
+            }
+        </style>
+        </head>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1 id ="title" class="display-5">단어 맞추기 게임</h1>
+            <div class="container">
+                {% for character_shuffled_list in words_shuffled_lists %}
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="display-2">
+                        {% for character in character_shuffled_list %}
+                            {{character}}
+                        {% endfor %}
+                        </h1>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="container">
+                {% for answer in answerlist %}
+                <div class="card" id="answercard">
+                    <div class="card-body">
+                        <h1 class="display-2">
+                                {{answer}}
+                            </h1>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div id="profile" class="alert alert-light" role="alert">
+                github.com/eungangku
+              </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>
